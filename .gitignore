@@ -1,0 +1,16 @@
+# OpenClaw
+.openclaw/
+
+# System
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Logs
+*.log
+
+# Temp
+*.tmp
