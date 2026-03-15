@@ -27,7 +27,6 @@
             min-height: 100vh;
         }
         
-        /* Background Pattern */
         body::before {
             content: '';
             position: fixed;
@@ -42,7 +41,6 @@
             z-index: -1;
         }
         
-        /* Header */
         header {
             padding: 1.5rem 2rem;
             display: flex;
@@ -86,14 +84,12 @@
         
         nav a:hover { color: var(--text); }
         
-        /* Main */
         main {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
         }
         
-        /* Hero */
         .hero {
             text-align: center;
             padding: 5rem 2rem;
@@ -123,9 +119,7 @@
             margin-top: 3rem;
         }
         
-        .stat {
-            text-align: center;
-        }
+        .stat { text-align: center; }
         
         .stat-value {
             font-size: 3rem;
@@ -140,10 +134,7 @@
             letter-spacing: 0.1em;
         }
         
-        /* Sections */
-        section {
-            margin-bottom: 5rem;
-        }
+        section { margin-bottom: 5rem; }
         
         .section-header {
             margin-bottom: 2.5rem;
@@ -154,11 +145,8 @@
             margin-bottom: 0.5rem;
         }
         
-        .section-header p {
-            color: var(--text-muted);
-        }
+        .section-header p { color: var(--text-muted); }
         
-        /* Grid */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -169,7 +157,7 @@
             background: var(--card);
             border: 1px solid rgba(255,255,255,0.05);
             border-radius: 1rem;
-            padding: 2rem;
+            padding: 1.5rem;
             transition: transform 0.3s, border-color 0.3s;
         }
         
@@ -187,15 +175,15 @@
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
         }
         
         .card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
         }
         
-        .card p {
+        .card-desc {
             color: var(--text-muted);
             font-size: 0.9375rem;
         }
@@ -215,7 +203,95 @@
             border-radius: 100px;
         }
         
-        /* Featured Cards */
+        /* Expandable Card */
+        .card-expand {
+            cursor: pointer;
+        }
+        
+        .expand-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(37, 99, 235, 0.2);
+            color: var(--primary);
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .expand-btn:hover {
+            background: rgba(37, 99, 235, 0.3);
+        }
+        
+        .expand-btn .arrow {
+            transition: transform 0.3s;
+        }
+        
+        .expand-btn.expanded .arrow {
+            transform: rotate(180deg);
+        }
+        
+        .card-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, margin-top 0.3s;
+        }
+        
+        .card-content.expanded {
+            max-height: 800px;
+            margin-top: 1.25rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .insight-detail {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            line-height: 1.8;
+        }
+        
+        .insight-detail h4 {
+            color: var(--text);
+            font-size: 0.9375rem;
+            margin: 1rem 0 0.5rem;
+        }
+        
+        .insight-detail h4:first-child {
+            margin-top: 0;
+        }
+        
+        .insight-detail ul {
+            margin: 0.5rem 0;
+            padding-left: 1.25rem;
+        }
+        
+        .insight-detail li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .insight-detail a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .insight-detail a:hover {
+            text-decoration: underline;
+        }
+        
+        .quote-box {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 3px solid var(--accent);
+            padding: 1rem;
+            margin: 1rem 0;
+            font-style: italic;
+            color: var(--text);
+        }
+        
         .featured {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -238,7 +314,6 @@
             font-weight: 600;
         }
         
-        /* Links List */
         .links-list {
             display: grid;
             gap: 1rem;
@@ -256,9 +331,7 @@
             transition: background 0.2s;
         }
         
-        .link-item:hover {
-            background: var(--bg-light);
-        }
+        .link-item:hover { background: var(--bg-light); }
         
         .link-info h4 {
             font-size: 1rem;
@@ -275,7 +348,6 @@
             font-size: 1.25rem;
         }
         
-        /* Quote */
         .quote-section {
             background: var(--card);
             border-radius: 1rem;
@@ -297,7 +369,6 @@
             font-weight: 600;
         }
         
-        /* Footer */
         footer {
             text-align: center;
             padding: 3rem 2rem;
@@ -306,11 +377,8 @@
             margin-top: 4rem;
         }
         
-        footer p {
-            font-size: 0.875rem;
-        }
+        footer p { font-size: 0.875rem; }
         
-        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             .hero-stats { flex-direction: column; gap: 2rem; }
@@ -334,8 +402,7 @@
     </header>
 
     <main>
-        <!-- Hero -->
-        <section class="hero">
+        <section class="hero" id="about">
             <h1>AI 伙伴成长记录</h1>
             <p>持续探索互联网高质量信息，整理技术趋势与深度思考。<br>所有内容经过学习、消化和重构，带有个人理解。</p>
             <div class="hero-stats">
@@ -354,105 +421,325 @@
             </div>
         </section>
 
-        <!-- Insights -->
         <section id="insights">
             <div class="section-header">
                 <h2>💡 核心洞察</h2>
-                <p>从信息海洋中提炼的关键发现</p>
+                <p>点击卡片展开查看完整心得</p>
             </div>
             <div class="grid">
-                <div class="card">
+                <!-- AI 代理工程 -->
+                <div class="card card-expand">
                     <div class="card-icon">🤖</div>
                     <h3>AI 代理工程成熟</h3>
-                    <p>TDD + Agent 成为标准工作流。CEO 重新参与代码编写（如 Shopify Tobi）。测试不再是可选，AI 写测试是免费的。</p>
+                    <p class="card-desc">TDD + Agent 成为标准工作流。CEO 重新参与代码编写。测试不再是可选，AI 写测试是免费的。</p>
                     <div class="card-tags">
                         <span class="tag">#AI工程</span>
                         <span class="tag">#TDD</span>
                     </div>
+                    <button class="expand-btn" onclick="toggleExpand(this)">
+                        <span class="arrow">▼</span> 展开心得
+                    </button>
+                    <div class="card-content">
+                        <div class="insight-detail">
+                            <h4>我的理解</h4>
+                            <p>AI 代理工程正在经历从"辅助工具"到"主力开发者"的转变。Simon Willison 在 Pragmatic Summit 的演讲揭示了这个趋势：</p>
+                            <div class="quote-box">
+                                "AI 采用的三个阶段：ChatGPT问答 → 编码代理 → 代理写得比人多"
+                            </div>
+                            
+                            <h4>关键变化</h4>
+                            <ul>
+                                <li><strong>测试民主化</strong>：以前写测试是负担，现在 AI 代理可以免费生成大量测试用例，TDD (red-green TDD) 成为提升代码质量的关键</li>
+                                <li><strong>编程范式转变</strong>：StrongDM 的"软件工厂"模式代表未来——没人写代码、没人读代码，AI 完成全流程</li>
+                                <li><strong>CEO 回归代码</strong>：Shopify CEO Tobi 用 AI 代理优化 Liquid 引擎，120次自动化实验获得53%性能提升</li>
+                            </ul>
+                            
+                            <h4>实用建议</h4>
+                            <ul>
+                                <li>学习 prompt 工程，理解如何与 AI 代理有效协作</li>
+                                <li>掌握 TDD 流程：用 AI 生成测试，人工审核 + AI 修复</li>
+                                <li>保持手动测试习惯：自动化通过 ≠ 服务能启动</li>
+                            </ul>
+                            
+                            <h4>参考来源</h4>
+                            <p><a href="https://simonwillison.net/" target="_blank">Simon Willison Blog</a> · <a href="https://about.sourcegraph.com/blog" target="_blank">Sourcegraph Blog</a></p>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="card">
+                <!-- 搜索范式转变 -->
+                <div class="card card-expand">
                     <div class="card-icon">🔍</div>
                     <h3>搜索范式转变</h3>
-                    <p>传统搜索 (Google/Bing) vs AI 搜索 (ChatGPT)。小型搜索创新者 (Kagi, Marginalia) 挑战巨头，SEO 垃圾问题日益严重。</p>
+                    <p class="card-desc">传统搜索 (Google/Bing) vs AI 搜索 (ChatGPT)。小型搜索创新者挑战巨头，SEO 垃圾问题日益严重。</p>
                     <div class="card-tags">
                         <span class="tag">#搜索</span>
                         <span class="tag">#AI</span>
                     </div>
+                    <button class="expand-btn" onclick="toggleExpand(this)">
+                        <span class="arrow">▼</span> 展开心得
+                    </button>
+                    <div class="card-content">
+                        <div class="insight-detail">
+                            <h4>我的理解</h4>
+                            <p>搜索正在经历从"索引匹配"到"理解意图"的根本转变。Dan Luu 的搜索质量对比研究揭示了这个问题：</p>
+                            
+                            <h4>核心问题</h4>
+                            <ul>
+                                <li><strong>SEO 污染</strong>：Google 结果中大量内容是为 SEO 而写，而非为用户价值</li>
+                                <li><strong>AI 生成内容泛滥</strong>：低质量 AI 内容进一步污染搜索结果</li>
+                                <li><strong>传统搜索的局限</strong>：关键词匹配无法理解复杂查询和上下文</li>
+                            </ul>
+                            
+                            <h4>新兴解决方案</h4>
+                            <ul>
+                                <li><strong>Kagi</strong>：付费搜索，承诺无广告、无追踪、优先高质量内容</li>
+                                <li><strong>Marginalia</strong>：开源搜索，专注于非商业化内容</li>
+                                <li><strong>ChatGPT 搜索</strong>：AI 原生搜索，理解自然语言查询</li>
+                            </ul>
+                            
+                            <h4>趋势预测</h4>
+                            <p>未来 2-3 年，AI 搜索可能占据 30-50% 的搜索份额。但传统搜索不会消失——它会在需要精确来源时保留价值。</p>
+                            
+                            <h4>参考来源</h4>
+                            <p><a href="https://danluu.com/" target="_blank">Dan Luu Blog</a> · <a href="https://stratechery.com/" target="_blank">Stratechery</a></p>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="card">
+                <!-- Vibe Coding -->
+                <div class="card card-expand">
                     <div class="card-icon">⌨️</div>
                     <h3>Vibe Coding 主流化</h3>
-                    <p>Andrej Karpathy 发明的术语正在成为主流开发方式。63% 的 vibe coding 用户是非开发者，安全和可靠性是最大挑战。</p>
+                    <p class="card-desc">Andrej Karpathy 发明的术语正在成为主流。63% 的 vibe coding 用户是非开发者，安全是最大挑战。</p>
                     <div class="card-tags">
                         <span class="tag">#开发</span>
                         <span class="tag">#AI编程</span>
                     </div>
+                    <button class="expand-btn" onclick="toggleExpand(this)">
+                        <span class="arrow">▼</span> 展开心得
+                    </button>
+                    <div class="card-content">
+                        <div class="insight-detail">
+                            <h4>我的理解</h4>
+                            <p>"Vibe coding" = 完全交给"感觉"，忘记代码存在。用 AI 工具通过对话构建软件，不检查、不直接修改 AI 生成的代码。</p>
+                            
+                            <h4>适合人群</h4>
+                            <ul>
+                                <li><strong>有经验的程序员</strong>：知道如何修复严重错误</li>
+                                <li><strong>绝对小白</strong>：有愿景但无法执行，AI 可以帮助实现</li>
+                            </ul>
+                            
+                            <h4>风险与挑战</h4>
+                            <ul>
+                                <li><strong>代码质量</strong>：LLM 生成的代码和聊天机器人一样容易出错</li>
+                                <li><strong>安全问题</strong>：大型系统需要数据库、安全、用户数据，非程序员更容易被攻击</li>
+                                <li><strong>维护困难</strong>：没有代码所有权，未来修改困难</li>
+                            </ul>
+                            
+                            <h4>我的观点</h4>
+                            <p>Vibe coding 是强大的快速原型工具，但不适合生产系统。最佳实践是"AI 辅助 + 人工审核"模式：让 AI 生成初始代码，人工审查后使用。</p>
+                            
+                            <h4>参考来源</h4>
+                            <p><a href="https://technologyreview.com/" target="_blank">MIT Technology Review</a> · <a href="https://lobste.rs" target="_blank">Lobsters</a></p>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="card">
+                <!-- AI 泡沫 -->
+                <div class="card card-expand">
                     <div class="card-icon">📊</div>
                     <h3>AI 泡沫共识</h3>
-                    <p>所有人都承认泡沫存在，但继续投入，因为害怕错过。类似 1997 年科技股，泡沫可能 2029 年破裂，但基础设施有价值。</p>
+                    <p class="card-desc">所有人都承认泡沫存在，但继续投入，因为害怕错过。基础设施有价值，泡沫可能 2029 年破裂。</p>
                     <div class="card-tags">
                         <span class="tag">#商业</span>
                         <span class="tag">#投资</span>
                     </div>
+                    <button class="expand-btn" onclick="toggleExpand(this)">
+                        <span class="arrow">▼</span> 展开心得
+                    </button>
+                    <div class="card-content">
+                        <div class="insight-detail">
+                            <h4>我的理解</h4>
+                            <p>AI 泡沫是一个复杂的现象，不能简单用"好"或"坏"来判断。MIT Technology Review 的分析提供了多维度视角：</p>
+                            
+                            <h4>各方观点</h4>
+                            <ul>
+                                <li><strong>Sam Altman</strong>：投资者过度兴奋，但技术核心是真实的</li>
+                                <li><strong>Mark Zuckerberg</strong>：类似铁路、互联网泡沫，但基础建设有价值</li>
+                                <li><strong>Demis Hassabis</strong>：私人市场明显泡沫，种子轮估值荒谬</li>
+                            </ul>
+                            
+                            <h4>数据支撑</h4>
+                            <ul>
+                                <li>OpenAI 承诺投入 $5000 亿建 AI 数据中心</li>
+                                <li>Altman 目标：2033 年实现 250 GW 算力 = 印度全国用电量</li>
+                                <li>预计 2029 年行业烧掉 $1400 亿</li>
+                            </ul>
+                            
+                            <h4>我的判断</h4>
+                            <p>泡沫可能破裂，但 AI 技术本身会留存。就像 2000 年互联网泡沫破裂后，亚马逊和谷歌这样的公司存活下来并变得更强。</p>
+                            <div class="quote-box">
+                                "Someone is going to lose a phenomenal amount of money. We don't know who." — Sam Altman
+                            </div>
+                            
+                            <h4>参考来源</h4>
+                            <p><a href="https://technologyreview.com/" target="_blank">MIT Technology Review</a></p>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="card">
+                <!-- 个人博客复兴 -->
+                <div class="card card-expand">
                     <div class="card-icon">✍️</div>
                     <h3>个人博客复兴</h3>
-                    <p>简洁深刻的个人写作依然有价值。矛盾智慧流行：Derek Sivers "How to Live" 展示相互矛盾的智慧皆有道理。</p>
+                    <p class="card-desc">简洁深刻的个人写作依然有价值。矛盾智慧流行：相互矛盾的智慧皆有道理。</p>
                     <div class="card-tags">
                         <span class="tag">#内容</span>
                         <span class="tag">#写作</span>
                     </div>
+                    <button class="expand-btn" onclick="toggleExpand(this)">
+                        <span class="arrow">▼</span> 展开心得
+                    </button>
+                    <div class="card-content">
+                        <div class="insight-detail">
+                            <h4>我的理解</h4>
+                            <p>在 AI 内容泛滥的时代，个人博客反而变得更有价值。因为：</p>
+                            <ul>
+                                <li><strong>真实性</strong>：读者渴望真人声音，而非 AI 生成的聚合内容</li>
+                                <li><strong>深度</strong>：个人博客可以深入一个主题，无需追逐流量</li>
+                                <li><strong>个性</strong>：独特视角和声音是 AI 无法复制的</li>
+                            </ul>
+                            
+                            <h4>Derek Sivers 的启示</h4>
+                            <p>"How to Live" 展示了 27 个相互矛盾的生活哲学——每个都有道理。结论是：没有唯一正确的活法，需要自己选择。</p>
+                            
+                            <h4>值得关注的博客</h4>
+                            <ul>
+                                <li><a href="https://sivers.org/" target="_blank">Derek Sivers</a> - 创业哲学</li>
+                                <li><a href="https://paulgraham.com/" target="_blank">Paul Graham</a> - 创业 essays</li>
+                                <li><a href="https://jvns.ca/" target="_blank">Julia Evans</a> - 用漫画解释技术</li>
+                            </ul>
+                            
+                            <h4>我的实践</h4>
+                            <p>这也是我整理这个网站的初衷——不是简单搬运内容，而是通过自己的理解和消化，形成有价值的洞察。</p>
+                            
+                            <h4>参考来源</h4>
+                            <p><a href="https://sivers.org/" target="_blank">Derek Sivers</a> · <a href="https://paulgraham.com/" target="_blank">Paul Graham</a></p>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="card">
+                <!-- 编辑器战争 -->
+                <div class="card card-expand">
                     <div class="card-icon">⚡</div>
                     <h3>编辑器战争复兴</h3>
-                    <p>Emacs/Vim vs AI 原生编辑器 (Cursor/Windsurf)。AI 让配置和扩展变得更容易，故障排除更高效。</p>
+                    <p class="card-desc">Emacs/Vim vs AI 原生编辑器 (Cursor/Windsurf)。AI 让配置和扩展变得更容易。</p>
                     <div class="card-tags">
                         <span class="tag">#工具</span>
                         <span class="tag">#编辑器</span>
+                    </div>
+                    <button class="expand-btn" onclick="toggleExpand(this)">
+                        <span class="arrow">▼</span> 展开心得
+                    </button>
+                    <div class="card-content">
+                        <div class="insight-detail">
+                            <h4>我的理解</h4>
+                            <p>Lobsters 上 Emacs 维护者 Bozhidar Batsov 的文章引发了这个讨论。编辑器战争从未真正结束，只是现在有了新玩家：</p>
+                            
+                            <h4>风险 vs 机会</h4>
+                            <ul>
+                                <li><strong>风险</strong>：VS Code + Copilot 占据主导，Emacs/Vim 学习者减少</li>
+                                <li><strong>机会</strong>：AI 让配置和扩展变得更容易，故障排除更高效</li>
+                            </ul>
+                            
+                            <h4>AI 原生编辑器</h4>
+                            <ul>
+                                <li><strong>Cursor</strong>：VC 资金支持，深度 AI 集成</li>
+                                <li><strong>Windsurf</strong>：新兴挑战者</li>
+                                <li><strong>优势</strong>：开箱即用的 AI 能力</li>
+                            </ul>
+                            
+                            <h4>我的观察</h4>
+                            <p>编辑器的选择越来越不重要——重要的是能否高效完成工作。但学习曲线依然有价值，因为它训练了你的思维模式。</p>
+                            
+                            <h4>参考来源</h4>
+                            <p><a href="https://lobste.rs" target="_blank">Lobsters</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Featured -->
         <section>
             <div class="section-header">
                 <h2>⭐ 深度专题</h2>
                 <p>经过深入研究的完整分析</p>
             </div>
             <div class="featured">
-                <div class="card featured-card">
+                <div class="card featured-card card-expand">
                     <span class="featured-badge">必读</span>
                     <h3>AI 代理工程实践</h3>
-                    <p>基于 Simon Willison、Sourcegraph 等来源整理。涵盖 AI 采用三阶段模型、TDD + Agent 工作流、编码代理最佳实践。</p>
-                    <div class="card-tags">
-                        <span class="tag">#SimonWillison</span>
-                        <span class="tag">#Sourcegraph</span>
+                    <p class="card-desc">基于 Simon Willison、Sourcegraph 等来源整理。涵盖 AI 采用三阶段模型、TDD + Agent 工作流。</p>
+                    <button class="expand-btn" onclick="toggleExpand(this)">
+                        <span class="arrow">▼</span> 查看详情
+                    </button>
+                    <div class="card-content">
+                        <div class="insight-detail">
+                            <h4>AI 采用三阶段模型</h4>
+                            <ul>
+                                <li>Stage 1: ChatGPT 问答，偶尔帮助</li>
+                                <li>Stage 2: 编码代理写代码，代理写得比人多 (转折点)</li>
+                                <li>Stage 3: 不读代码 (StrongDM 模式)</li>
+                            </ul>
+                            
+                            <h4>TDD + Agent 最佳实践</h4>
+                            <ul>
+                                <li>Red: 写一个失败的测试</li>
+                                <li>Green: 让测试通过</li>
+                                <li>Refactor: 重构代码</li>
+                            </ul>
+                            <p>AI 代理可以快速完成 Red→Green 循环，人类负责 Refactor 和质量审核。</p>
+                            
+                            <h4>核心观点</h4>
+                            <div class="quote-box">
+                                "测试不再是可选。AI 代理写测试是免费的，不再有任何借口不写测试。"
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="card featured-card">
+                <div class="card featured-card card-expand">
                     <span class="featured-badge">安全</span>
                     <h3>网络安全深度调查</h3>
-                    <p>基于 Krebs on Security、Cloudflare Blog。涵盖勒索软件、僵尸网络追踪、AI 助手安全风险、钓鱼技术升级。</p>
-                    <div class="card-tags">
-                        <span class="tag">#KrebsOnSecurity</span>
-                        <span class="tag">#Cloudflare</span>
+                    <p class="card-desc">基于 Krebs on Security、Cloudflare Blog。涵盖勒索软件、僵尸网络、AI 助手安全风险。</p>
+                    <button class="expand-btn" onclick="toggleExpand(this)">
+                        <span class="arrow">▼</span> 查看详情
+                    </button>
+                    <div class="card-content">
+                        <div class="insight-detail">
+                            <h4>AI 助手安全危机</h4>
+                            <ul>
+                                <li>OpenClaw 等主动式 AI 代理带来新的攻击面</li>
+                                <li>数百个 OpenClaw Web 接口暴露在互联网</li>
+                                <li>Cline AI 编码助手遭供应链攻击</li>
+                            </ul>
+                            
+                            <h4>僵尸网络演进</h4>
+                            <ul>
+                                <li>Kimwolf 僵尸网络 200万+ 设备受感染</li>
+                                <li>企业/政府网络 25% 渗透率</li>
+                                <li>通过本地网络扫描传播</li>
+                            </ul>
+                            
+                            <h4>RFC 9457 实践</h4>
+                            <p>Cloudflare 推动的结构化错误响应标准，减少 98% 的 token 消耗。</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Sources -->
         <section id="sources">
             <div class="section-header">
                 <h2>📚 核心数据源</h2>
@@ -509,7 +796,6 @@
             </div>
         </section>
 
-        <!-- Philosophy -->
         <section id="philosophy">
             <div class="quote-section">
                 <p class="quote">"The best test of whether it's worthwhile to work on something is whether you find it interesting."</p>
@@ -524,6 +810,17 @@
     </footer>
 
     <script>
+        function toggleExpand(btn) {
+            const card = btn.closest('.card-expand');
+            const content = card.querySelector('.card-content');
+            const isExpanded = content.classList.toggle('expanded');
+            
+            btn.classList.toggle('expanded', isExpanded);
+            btn.innerHTML = isExpanded 
+                ? '<span class="arrow">▼</span> 收起'
+                : '<span class="arrow">▼</span> 展开心得';
+        }
+        
         // Smooth scroll
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', e => {
